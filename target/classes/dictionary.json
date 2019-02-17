@@ -1,0 +1,184 @@
+{
+	"letterA" : {
+	"capacity" : 4,
+  	"word0" : "anchor",
+  	"word1" : "ambitions",
+  	"word2" : "and",
+  	"word3" : "ant"
+  },
+  "letterB" : {
+	"capacity" : 4,
+  	"word0" : "branch",
+  	"word1" : "bench",
+  	"word2" : "big",
+  	"word3" : "billion"
+  },
+  "letterC" : {
+	"capacity" : 4,
+  	"word0" : "clear",
+  	"word1" : "carpet",
+  	"word2" : "cocktail",
+  	"word3" : "capacity"
+  },
+  "letterD" : {
+	"capacity" : 4,
+  	"word0" : "desk",
+  	"word1" : "damage",
+  	"word2" : "damn",
+  	"word3" : "drill"
+  },
+  "letterE" : {
+	"capacity" : 4,
+  	"word0" : "enhance",
+  	"word1" : "elephant",
+  	"word2" : "elevator",
+  	"word3" : "elegant"
+  },
+  "letterF" : {
+	"capacity" : 4,
+  	"word0" : "fruit",
+  	"word1" : "frustraiting",
+  	"word2" : "freak",
+  	"word3" : "famous"
+  },
+  "letterG" : {
+	"capacity" : 4,
+  	"word0" : "general",
+  	"word1" : "gender",
+  	"word2" : "generic",
+  	"word3" : "gentleman"
+  },
+  "letterH" : {
+	"capacity" : 4,
+  	"word0" : "hat",
+  	"word1" : "humster",
+  	"word2" : "human",
+  	"word3" : "hierarchy"
+  },
+  "letterI" : {
+	"capacity" : 4,
+  	"word0" : "immortal",
+  	"word1" : "inhale",
+  	"word2" : "indexed",
+  	"word3" : "invites"
+  },
+  "letterJ" : {
+	"capacity" : 4,
+  	"word0" : "jenga",
+  	"word1" : "jumps",
+  	"word2" : "jewel",
+  	"word3" : "jew"
+  },
+  "letterK" : {
+	"capacity" : 4,
+  	"word0" : "kitten",
+  	"word1" : "king",
+  	"word2" : "kernel",
+  	"word3" : "kite"
+  },
+  "letterL" : {
+	"capacity" : 4,
+  	"word0" : "lesson",
+  	"word1" : "luggage",
+  	"word2" : "left",
+  	"word3" : "leak"
+  },
+  "letterM" : {
+	"capacity" : 4,
+  	"word0" : "marine",
+  	"word1" : "malicious",
+  	"word2" : "male",
+  	"word3" : "marked"
+  },
+  "letterN" : {
+	"capacity" : 4,
+  	"word0" : "neutral",
+  	"word1" : "normal",
+  	"word2" : "nuggets",
+  	"word3" : "nervous"
+  },
+  "letterO" : {
+	"capacity" : 4,
+  	"word0" : "object",
+  	"word1" : "oriented",
+  	"word2" : "opera",
+  	"word3" : "open"
+  },
+  "letterP" : {
+	"capacity" : 4,
+  	"word0" : "price",
+  	"word1" : "picks",
+  	"word2" : "pepper",
+  	"word3" : "pill"
+  },
+  "letterQ" : {
+	"capacity" : 4,
+  	"word0" : "quote",
+  	"word1" : "quarter",
+  	"word2" : "queue",
+  	"word3" : "quiz"
+  },
+  "letterR" : {
+	"capacity" : 4,
+  	"word0" : "racсoon",
+  	"word1" : "ruins",
+  	"word2" : "rare",
+  	"word3" : "rapid"
+  },
+  "letterS" : {
+	"capacity" : 4,
+  	"word0" : "size",
+  	"word1" : "slurps",
+  	"word2" : "surfer",
+  	"word3" : "snake"
+  },
+  "letterT" : {
+	"capacity" : 4,
+  	"word0" : "tatoo",
+  	"word1" : "travelling",
+  	"word2" : "taping",
+  	"word3" : "tea"
+  },
+  "letterU" : {
+	"capacity" : 4,
+  	"word0" : "unpack",
+  	"word1" : "uncle",
+  	"word2" : "under",
+  	"word3" : "umbrella"
+  },
+  "letterV" : {
+	"capacity" : 4,
+  	"word0" : "violent",
+  	"word1" : "volcano",
+  	"word2" : "vehicle",
+  	"word3" : "versus"
+  },
+  "letterW" : {
+	"capacity" : 4,
+  	"word0" : "warning",
+  	"word1" : "warm",
+  	"word2" : "writes",
+  	"word3" : "winter"
+  },
+  "letterX" : {
+	"capacity" : 4,
+  	"word0" : "x-value",
+  	"word1" : "x-ray",
+  	"word2" : "xerox",
+  	"word3" : "xylophone"
+  },
+  "letterY" : {
+	"capacity" : 4,
+  	"word0" : "yarn",
+  	"word1" : "yesterday",
+  	"word2" : "yelling",
+  	"word3" : "yellow"
+  },
+  "letterZ" : {
+	"capacity" : 4,
+  	"word0" : "zombie",
+  	"word1" : "zebra",
+  	"word2" : "zen",
+  	"word3" : "zing"
+  }
+}
