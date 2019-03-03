@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 
 import java.util.LinkedList;
 
-import static bod.Globals.getRandomInt;
+import bod.Globals;
 
 public class WordsCharGroup<T> extends CharGroup<T> {
     protected void generate(){
@@ -31,24 +31,24 @@ public class WordsCharGroup<T> extends CharGroup<T> {
         String word = null;
 
         reader.beginObject();
-        //System.out.println("accepted Key: " + key);
+        
         while(reader.hasNext()){
             word = reader.nextName();
-            //System.out.println("letter: " + word);
+            
             if(word.equals(key)){
                 reader.beginObject();
 
                 String capacity = reader.nextName();
-                //System.out.println("capacity property: " + capacity);
+                
 
                 int cap = reader.nextInt();
-                //System.out.println("capacity : " + cap);
-                subKey = getRandomInt(0, cap - 1);
-                //System.out.println("subKey: " + subKey);
+                
+                subKey = Globals.getRandomInt(0, cap - 1);
+                
 
                 while(reader.hasNext()){
                     word = reader.nextName();
-                    //System.out.println("word property: " + word);
+                    
                     if(word.equals("word" + subKey)){
                         return reader.nextString();
                     }else{

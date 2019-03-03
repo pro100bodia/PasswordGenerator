@@ -1,8 +1,6 @@
 package bod.algorithmic;
 
-import bod.Globals;
-import static bod.Globals.getRandomInt;
-import static bod.Globals.ui;
+import static bod.Globals.*;
 
 import java.util.*;
 
@@ -11,26 +9,26 @@ public class Calculate {
         //alphabet filling
         List<CharGroup> alphabet = new ArrayList<>();
         byte val = 0;
-        byte charsNum = (byte)Globals.ui.charactersNumSpinBox.value();
+        byte charsNum = (byte)ui.charactersNumSpinBox.value();
         
 
         byte groupsChecked = 0;
         //map to store charGroupId, requiredNum pairs
         Map<Byte, Byte> cryteria = new TreeMap<>();
 
-        if(Globals.ui.numsChecBox.isChecked()){
+        if(ui.numsChecBox.isChecked()){
             cryteria.put((byte)0, (byte)0);
             groupsChecked++;
         }
-        if(Globals.ui.lowerCaseCheckBox.isChecked()){
+        if(ui.lowerCaseCheckBox.isChecked()){
             cryteria.put((byte)1, (byte)0);
             groupsChecked++;
         }
-        if(Globals.ui.upperCaseCheckBox.isChecked()) {
+        if(ui.upperCaseCheckBox.isChecked()) {
             cryteria.put((byte)2, (byte)0);
             groupsChecked++;
         }
-        if(Globals.ui.useSymbolsCheckBox.isChecked()) {
+        if(ui.useSymbolsCheckBox.isChecked()) {
             cryteria.put((byte)3, (byte)0);
             groupsChecked++;
         }
@@ -82,14 +80,16 @@ public class Calculate {
         
 
         //phrase generation
-        List<String> phrase = new LinkedList<>();
+        String phrase = "";
         String phraseElem;
+        String password = "";
+
         boolean pop =
                 ui.sameCharsCheckBox.isChecked() &&
                         charsNum < genGroupPower;
         
 
-        boolean notSequential = Globals.ui.sequentialCharsCheckBox.isChecked();
+        boolean notSequential = ui.sequentialCharsCheckBox.isChecked();
         
 
         int iteration = 0;
@@ -101,24 +101,21 @@ public class Calculate {
                 
                 if(iteration == 2){
                     String newPhrase = phraseElem.toUpperCase(Locale.ROOT);
-                    phrase.add(newPhrase);
+                    phrase += newPhrase + " ";
+                    password += newPhrase.charAt(0);
                 }else {
-                    phrase.add(phraseElem);
+                    phrase += phraseElem + " ";
+                    password += phraseElem.charAt(0);
                 }
 
             }
             iteration++;
         }
 
-        ui.simplePhraseLineEdit.setText(phrase.toString().replaceAll("\\[|\\]|,", ""));
+        ui.simplePhraseLineEdit.setText(phrase);
         //end phrase generation
 
         //output the password
-        String password = "";
-        for(String i: phrase)
-        {
-            password += i.charAt(0);
-        }
         ui.passLineEdit.setText(password);
     }
 }

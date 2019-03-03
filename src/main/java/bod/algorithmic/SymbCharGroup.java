@@ -1,6 +1,6 @@
 package bod.algorithmic;
 
-import bod.*;
+import bod.Globals;
 
 import java.util.Arrays;
 import java.util.Collections;

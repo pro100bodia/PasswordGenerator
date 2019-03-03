@@ -2,16 +2,13 @@ package bod;
 
 import com.trolltech.qt.core.QRect;
 import com.trolltech.qt.gui.QIcon;
-import static bod.Globals.isOpened;
-import static bod.Globals.ui;
+import static bod.Globals.*;
 
 
 public class VisualEffects{
     public void validateUI(){
-        ui.dropDownPushButton.setIcon(new QIcon("src\\main\\resources\\img\\drop-down-arrow-down.png"));
+        ui.dropDownPushButton.setIcon(new QIcon("classpath:img/drop-down-arrow-down.png"));
 
-        //ui.paramsFrame.setGeometry(10, 90, 831, 0);//set height to 0
-        //ui.generateButton.setGeometry(360, 116, 171, 28);
     }
 
     //hide/show additional parameters
@@ -19,7 +16,7 @@ public class VisualEffects{
         //rotate an arrow
         isOpened *= -1;
         String arrowDirection;
-        arrowDirection = (isOpened < 0) ?  "src\\main\\resources\\img\\drop-down-arrow-down.png" : "src\\main\\resources\\img\\drop-down-arrow-up.png";
+        arrowDirection = (isOpened < 0) ?  "classpath:img/drop-down-arrow-down.png" : "classpath:img/drop-down-arrow-up.png";
         ui.dropDownPushButton.setIcon(new QIcon(arrowDirection));
 
         //increase/decrease paramsFrame height

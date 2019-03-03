@@ -38,10 +38,9 @@ public class Ui_mainWidget implements com.trolltech.qt.QUiForm<QWidget>
 
     public Ui_mainWidget() { super(); }
 
-    public void setupUi(QWidget mainWidgetTest)
-    {
+    private void setMainWidget(QWidget mainWidgetTest){
         mainWidgetTest.setObjectName("mainWidgetTest");
-        mainWidgetTest.setWindowIcon(new QIcon("src\\main\\resources\\img\\icon.png"));
+        mainWidgetTest.setWindowIcon(new QIcon("classpath:img/icon.png"));
         mainWidgetTest.setWindowModality(com.trolltech.qt.core.Qt.WindowModality.ApplicationModal);
         mainWidgetTest.resize(new QSize(1055, 830).expandedTo(mainWidgetTest.minimumSizeHint()));
         QSizePolicy sizePolicy = new QSizePolicy(com.trolltech.qt.gui.QSizePolicy.Policy.Fixed, com.trolltech.qt.gui.QSizePolicy.Policy.Fixed);
@@ -54,9 +53,16 @@ public class Ui_mainWidget implements com.trolltech.qt.QUiForm<QWidget>
         mainWidgetTest.setFont(font);
         mainWidgetTest.setWindowTitle("Password Generator");
         mainWidgetTest.setStyleSheet("color: #d2c608;\n"+
-"background: #181714;");
+                "background: #181714;");
+    }
+
+    private void setGridLayout(QWidget mainWidgetTest){
         gridLayout = new QGridLayout(mainWidgetTest);
         gridLayout.setObjectName("gridLayout");
+
+    }
+
+    private void setMainFrame(QWidget mainWidgetTest){
         mainFrame = new QFrame(mainWidgetTest);
         mainFrame.setObjectName("mainFrame");
         QSizePolicy sizePolicy1 = new QSizePolicy(com.trolltech.qt.gui.QSizePolicy.Policy.Fixed, com.trolltech.qt.gui.QSizePolicy.Policy.Fixed);
@@ -67,11 +73,15 @@ public class Ui_mainWidget implements com.trolltech.qt.QUiForm<QWidget>
         mainFrame.setMinimumSize(new QSize(871, 741));
         mainFrame.setMaximumSize(new QSize(871, 741));
         mainFrame.setStyleSheet("border: none;");
+
+    }
+
+    private void setFormFrame(){
         formFrame = new QFrame(mainFrame);
         formFrame.setObjectName("formFrame");
         formFrame.setEnabled(true);
         formFrame.setGeometry(new QRect(0, 180, 871, 561));
-        QFontDatabase.addApplicationFont("src\\main\\resources\\fonts\\roboto\\Roboto-Regular.ttf");
+        QFontDatabase.addApplicationFont("classpath:fonts/roboto/Roboto-Regular.ttf");
         QFont font1 = new QFont();
         font1.setFamily("Roboto");
         font1.setBold(false);
@@ -79,8 +89,12 @@ public class Ui_mainWidget implements com.trolltech.qt.QUiForm<QWidget>
         font1.setWeight(50);
         formFrame.setFont(font1);
         formFrame.setStyleSheet("font: 24px \"Roboto\"; border: 2px solid #d2c608;\n" +
-                                "QSpinBox{background: red;}");
+                "QSpinBox{background: red;}");
         formFrame.setLineWidth(2);
+
+    }
+
+    private void setNumsCharsLabel(){
         numCharsLabel = new QLabel(formFrame);
         numCharsLabel.setObjectName("numCharsLabel");
         numCharsLabel.setGeometry(new QRect(20, 20, 241, 21));
@@ -91,6 +105,10 @@ public class Ui_mainWidget implements com.trolltech.qt.QUiForm<QWidget>
         font2.setWeight(50);
         numCharsLabel.setFont(font2);
         numCharsLabel.setStyleSheet("border: none;");
+
+    }
+
+    private void setCharNumSpinBox(){
         charactersNumSpinBox = new QSpinBox(formFrame);
         charactersNumSpinBox.setObjectName("charactersNumSpinBox");
         charactersNumSpinBox.setGeometry(new QRect(270, 20, 50, 22));
@@ -101,12 +119,16 @@ public class Ui_mainWidget implements com.trolltech.qt.QUiForm<QWidget>
         font3.setWeight(50);
         charactersNumSpinBox.setFont(font3);
         charactersNumSpinBox.setStyleSheet("border: none;\n"+
-"border-bottom: 2px solid yellow;\n"+
-"\n");
+                "border-bottom: 2px solid yellow;\n"+
+                "\n");
         charactersNumSpinBox.setWrapping(false);
         charactersNumSpinBox.setFrame(false);
         charactersNumSpinBox.setMinimum(6);
         charactersNumSpinBox.setMaximum(20);
+
+    }
+
+    private void setAddParamsLabel(){
         addParamsLabel = new QLabel(formFrame);
         addParamsLabel.setObjectName("addParamsLabel");
         addParamsLabel.setGeometry(new QRect(20, 50, 251, 41));
@@ -117,26 +139,44 @@ public class Ui_mainWidget implements com.trolltech.qt.QUiForm<QWidget>
         font4.setWeight(50);
         addParamsLabel.setFont(font4);
         addParamsLabel.setStyleSheet("border: none;");
+
+    }
+
+    private void setDropDownPushButton(){
         dropDownPushButton = new QPushButton(formFrame);
         dropDownPushButton.setObjectName("dropDownPushButton");
         dropDownPushButton.setGeometry(new QRect(260, 60, 93, 28));
-        dropDownPushButton.setStyleSheet("background-image: url(:/img/drop-down-arrow.png);\n"+
-"border: none;\n"+
-"");
+        dropDownPushButton.setStyleSheet("border: none;\n");
+
+    }
+
+    private void setParamsFrame(){
         paramsFrame = new QFrame(formFrame);
         paramsFrame.setObjectName("paramsFrame");
         paramsFrame.setGeometry(new QRect(10, 90, 831, 321));
         paramsFrame.setStyleSheet("border: none;");
         paramsFrame.setLineWidth(2);
+
+    }
+
+    private void setSymbolsLineEdit(){
         SymbolsLineEdit = new QLineEdit(paramsFrame);
         SymbolsLineEdit.setObjectName("SymbolsLineEdit");
         SymbolsLineEdit.setGeometry(new QRect(190, 170, 351, 36));
         SymbolsLineEdit.setStyleSheet("border-bottom: 2px solid yellow;");
         SymbolsLineEdit.setFrame(false);
+
+    }
+
+    private void setUpperCaseCheckBox(){
         upperCaseCheckBox = new QCheckBox(paramsFrame);
         upperCaseCheckBox.setObjectName("upperCaseCheckBox");
         upperCaseCheckBox.setGeometry(new QRect(11, 132, 141, 33));
         upperCaseCheckBox.setChecked(true);
+
+    }
+
+    private void setChooseAllCheckBox(){
         chooseAllCheckBox = new QCheckBox(paramsFrame);
         chooseAllCheckBox.setObjectName("chooseAllCheckBox");
         chooseAllCheckBox.setGeometry(new QRect(11, 12, 138, 33));
@@ -147,52 +187,87 @@ public class Ui_mainWidget implements com.trolltech.qt.QUiForm<QWidget>
         font5.setWeight(50);
         chooseAllCheckBox.setFont(font5);
         chooseAllCheckBox.setStyleSheet("border: none;\n"+
-"chooseAllCheckBox::indicator{	\n"+
-"	border: none;	\n"+
-"}");
+                "chooseAllCheckBox::indicator{	\n"+
+                "	border: none;	\n"+
+                "}");
         chooseAllCheckBox.setIconSize(new QSize(40, 40));
         chooseAllCheckBox.setChecked(true);
         chooseAllCheckBox.setTristate(false);
+
+    }
+
+    private void setNumsCheckBox(){
         numsChecBox = new QCheckBox(paramsFrame);
         numsChecBox.setObjectName("numsChecBox");
         numsChecBox.setGeometry(new QRect(11, 52, 196, 33));
         numsChecBox.setChecked(true);
+
+    }
+
+    private void setLowercaseCheckBox(){
         lowerCaseCheckBox = new QCheckBox(paramsFrame);
         lowerCaseCheckBox.setObjectName("lowerCaseCheckBox");
         lowerCaseCheckBox.setGeometry(new QRect(11, 92, 225, 33));
         lowerCaseCheckBox.setChecked(true);
+
+    }
+
+    private void setUseSymbsCheckBox(){
         useSymbolsCheckBox = new QCheckBox(paramsFrame);
         useSymbolsCheckBox.setObjectName("useSymbolsCheckBox");
         useSymbolsCheckBox.setGeometry(new QRect(11, 172, 165, 33));
         useSymbolsCheckBox.setChecked(true);
+
+    }
+
+    private void setSameCharsCheckBox(){
         sameCharsCheckBox = new QCheckBox(paramsFrame);
         sameCharsCheckBox.setObjectName("sameCharsCheckBox");
         sameCharsCheckBox.setGeometry(new QRect(11, 212, 523, 33));
         sameCharsCheckBox.setChecked(true);
+
+    }
+
+    private void setSequentialCharsCheckBox(){
         sequentialCharsCheckBox = new QCheckBox(paramsFrame);
         sequentialCharsCheckBox.setObjectName("sequentialCharsCheckBox");
         sequentialCharsCheckBox.setGeometry(new QRect(11, 252, 517, 33));
         sequentialCharsCheckBox.setChecked(true);
+
+    }
+
+    private void setFinalFrame(){
         finalFrame = new QFrame(formFrame);
         finalFrame.setObjectName("finalFrame");
         finalFrame.setGeometry(new QRect(20, 420, 831, 121));
         finalFrame.setStyleSheet("border: none;");
         finalFrame.setFrameShape(com.trolltech.qt.gui.QFrame.Shape.StyledPanel);
         finalFrame.setFrameShadow(com.trolltech.qt.gui.QFrame.Shadow.Raised);
+
+    }
+
+    private void setGenerateButton(){
         generateButton = new QPushButton(finalFrame);
         generateButton.setObjectName("generateButton");
         generateButton.setGeometry(new QRect(360, 0, 171, 28));
         generateButton.setStyleSheet("background: #d2c608;\n"+
-"color: #181714;\n"+
-"border: none;\n"+
-"");
+                "color: #181714;\n"+
+                "border: none;\n"+
+                "");
         generateButton.setDefault(false);
         generateButton.setFlat(false);
+
+    }
+
+    private void setSimplePhraseLabel(){
         simplePhraseLabel = new QLabel(finalFrame);
         simplePhraseLabel.setObjectName("simplePhraseLabel");
         simplePhraseLabel.setGeometry(new QRect(2, 74, 292, 32));
         simplePhraseLabel.setStyleSheet("border: none;\n"+
-"");
+                "");
+    }
+
+    private void setSimplePhraseLineEdit(){
         simplePhraseLineEdit = new QLineEdit(finalFrame);
         simplePhraseLineEdit.setObjectName("simplePhraseLineEdit");
         simplePhraseLineEdit.setGeometry(new QRect(294, 74, 531, 36));
@@ -202,20 +277,32 @@ public class Ui_mainWidget implements com.trolltech.qt.QUiForm<QWidget>
         sizePolicy2.setHeightForWidth(simplePhraseLineEdit.sizePolicy().hasHeightForWidth());
         simplePhraseLineEdit.setSizePolicy(sizePolicy2);
         simplePhraseLineEdit.setStyleSheet("border: none;\n"+
-"border-bottom: 2px solid yellow;");
+                "border-bottom: 2px solid yellow;");
         simplePhraseLineEdit.setFrame(false);
         simplePhraseLineEdit.setReadOnly(true);
+
+    }
+
+    private void setPassLabel(){
         passLabel = new QLabel(finalFrame);
         passLabel.setObjectName("passLabel");
         passLabel.setGeometry(new QRect(2, 32, 194, 32));
         passLabel.setStyleSheet("border: none;");
+
+    }
+
+    private void setPassLineEdit(){
         passLineEdit = new QLineEdit(finalFrame);
         passLineEdit.setObjectName("passLineEdit");
         passLineEdit.setGeometry(new QRect(210, 30, 291, 36));
         passLineEdit.setStyleSheet("border: none;\n"+
-"border-bottom: 2px solid yellow;");
+                "border-bottom: 2px solid yellow;");
         passLineEdit.setFrame(false);
         passLineEdit.setReadOnly(true);
+
+    }
+
+    private void setMainTitleLabel(){
         mainTitleLabel = new QLabel(mainFrame);
         mainTitleLabel.setObjectName("mainTitleLabel");
         mainTitleLabel.setEnabled(true);
@@ -226,7 +313,7 @@ public class Ui_mainWidget implements com.trolltech.qt.QUiForm<QWidget>
         sizePolicy3.setHeightForWidth(mainTitleLabel.sizePolicy().hasHeightForWidth());
         mainTitleLabel.setSizePolicy(sizePolicy3);
         mainTitleLabel.setMinimumSize(new QSize(0, 120));
-        QFontDatabase.addApplicationFont("src\\main\\resources\\fonts\\bitter\\Bitter-Bold.otf");
+        QFontDatabase.addApplicationFont("classpath:fonts/bitter/Bitter-Bold.otf");
         QFont font6 = new QFont();
         font6.setFamily("Bitter");
         font6.setPointSize(48);
@@ -234,7 +321,11 @@ public class Ui_mainWidget implements com.trolltech.qt.QUiForm<QWidget>
         font6.setWeight(75);
         mainTitleLabel.setFont(font6);
         mainTitleLabel.setStyleSheet("border-bottom: 2px solid #dbe9de;\n"+
-"padding-bottom: 8px;");
+                "padding-bottom: 8px;");
+
+    }
+
+    private void setLozungLabel(){
         lozungLabel = new QLabel(mainFrame);
         lozungLabel.setObjectName("lozungLabel");
         lozungLabel.setEnabled(true);
@@ -245,13 +336,71 @@ public class Ui_mainWidget implements com.trolltech.qt.QUiForm<QWidget>
         sizePolicy4.setHeightForWidth(lozungLabel.sizePolicy().hasHeightForWidth());
         lozungLabel.setSizePolicy(sizePolicy4);
         lozungLabel.setStyleSheet("font-size: 30px;\n"+
-"color: #dbe9de;\n"+
-"text-align: center;\n"+
-"width: 100%;\n"+
-"");
+                "color: #dbe9de;\n"+
+                "text-align: center;\n"+
+                "width: 100%;\n"+
+                "");
         lozungLabel.setAlignment(com.trolltech.qt.core.Qt.AlignmentFlag.createQFlags(com.trolltech.qt.core.Qt.AlignmentFlag.AlignCenter));
 
+
+    }
+
+    public void setupUi(QWidget mainWidgetTest)
+    {
+        setMainWidget(mainWidgetTest);
+
+        setGridLayout(mainWidgetTest);
+
+        setMainFrame(mainWidgetTest);
+
+        setMainTitleLabel();
+
+        setLozungLabel(); 
+
+        setFormFrame();
+
+        setNumsCharsLabel();
+
+        setCharNumSpinBox();
+
+        setAddParamsLabel();
+
+        setDropDownPushButton();
+
+        setParamsFrame();
+
+        setChooseAllCheckBox();
+
+        setNumsCheckBox();
+
+        setLowercaseCheckBox();
+
+        setUpperCaseCheckBox();
+
+        setUseSymbsCheckBox();
+
+        setSymbolsLineEdit();
+
+        setSameCharsCheckBox();
+
+        setSequentialCharsCheckBox();
+
+        setFinalFrame();
+
+        setGenerateButton();
+
+        setPassLabel();
+
+        setPassLineEdit();
+
+        setSimplePhraseLabel();
+
+        setSimplePhraseLineEdit();
+
+
+        //align to the center in the end
         gridLayout.addWidget(mainFrame, 0, 0, 1, 1);
+
         retranslateUi(mainWidgetTest);
 
         mainWidgetTest.connectSlotsByName();
@@ -262,8 +411,8 @@ public class Ui_mainWidget implements com.trolltech.qt.QUiForm<QWidget>
         numCharsLabel.setText(com.trolltech.qt.core.QCoreApplication.translate("mainWidgetTest", "Number of characters", null));
         addParamsLabel.setText(com.trolltech.qt.core.QCoreApplication.translate("mainWidgetTest", "Additional parameters", null));
         dropDownPushButton.setText("");
-        SymbolsLineEdit.setText(com.trolltech.qt.core.QCoreApplication.translate("mainWidgetTest", "`~!@#$%^&*()_+=-\\/|{}[]:;\"'<>,.?", null));
-        upperCaseCheckBox.setText(com.trolltech.qt.core.QCoreApplication.translate("mainWidgetTest", "Uppercase", null));
+        SymbolsLineEdit.setText(com.trolltech.qt.core.QCoreApplication.translate("mainWidgetTest", "`~!@#$%^&*()_+=-//|{}[]:;\"'<>,.?", null));
+        upperCaseCheckBox.setText(com.trolltech.qt.core.QCoreApplication.translate("mainWidgetTest", "Uppercase (ABC)", null));
         chooseAllCheckBox.setText(com.trolltech.qt.core.QCoreApplication.translate("mainWidgetTest", "Choose all", null));
         numsChecBox.setText(com.trolltech.qt.core.QCoreApplication.translate("mainWidgetTest", "Numbers(1234)", null));
         lowerCaseCheckBox.setText(com.trolltech.qt.core.QCoreApplication.translate("mainWidgetTest", "Lowercase(abcde)", null));

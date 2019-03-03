@@ -3,7 +3,7 @@ package bod.algorithmic;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import static bod.Globals.getRandomInt;
+import bod.Globals;
 
 public abstract class CharGroup<T>{
     protected int groupPower, requiredNum;
@@ -34,7 +34,7 @@ public abstract class CharGroup<T>{
         if(this.groupPower == 0)
             this.restoreSubalphabet();
 
-        int key = getRandomInt(0, this.groupPower - 1);
+        int key = Globals.getRandomInt(0, this.groupPower - 1);
 
         String val = this.subAlphabet.get(key).toString();
 
@@ -42,10 +42,6 @@ public abstract class CharGroup<T>{
         if(notSequential){
             try{
                 //pop left
-//                System.out.println("reservedAlphabet:");
-//                System.out.println(this.reservedAlphabet);
-//                System.out.println("subAlphabet:");
-//                System.out.println(this.subAlphabet);
                 this.reservedAlphabet.add( this.subAlphabet.remove(key - 1) );
                 this.groupPower--;
 
